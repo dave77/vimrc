@@ -16,7 +16,6 @@ set showmode
 set ruler
 set fileencoding=utf-8
 set enc=utf-8
-set mouse=a
 set backspace=2
 set lazyredraw
 set hidden
@@ -30,8 +29,8 @@ if has('persistent_undo')
     set undofile
     set undodir=$HOME/.vim/tmp
 endif
+
 set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
-set foldmethod=syntax
 
 set ofu=syntaxcomplete*Complete
 set completeopt+=longest
@@ -64,15 +63,16 @@ endfunction
 
 set number
 
-set guifont=Inconsolata\ 9
+set guifont=Monospace\ 8
 if has("gui_running")
    " Remove Toolbar
    set guioptions-=T
+   set mouse=a
    set lines=40
 endif
 
 set background=dark
-colorscheme wuye
+colorscheme wuye 
 
 " Cool command completion stuff
 set wildmenu
@@ -133,20 +133,25 @@ map <silent> <A-l> <C-w>>
 map <C-n> :cn<CR>
 map <C-m> :cp<CR>
 
+" map @s to signed off line
+nnoremap <silent> @s iSigned-off-by: David Wiltshire <dunlucky1@gmail.com><Esc>
+
 " map <F4> to switch from .c to .h
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 " Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufRead,BufWrite C if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufRead,BufWrite C++ if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufRead,BufWrite python if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufRead,BufWrite perl if ! &bin | silent! %s/\s\+$//ge | endif
 
 " formatting
 syntax on
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=8
+set tabstop=8
+set softtabstop=8
 set autoindent
-set expandtab
 
-au FileType C setlocal shiftwidth=8 tabstop=8, softtabstop=8, cindent
-au FileType C++ setlocal cindent
-au FileType python setlocal tabstop=4, softtabstop=4
+au FileType C setlocal shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab cindent
+au FileType Haskell setlocal shiftwidth=8 tabstop=8 softtabstop=8 expandtab
+au FileType C++ setlocal cindent tabstop=4 expandtab shiftwidth
