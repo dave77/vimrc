@@ -6,9 +6,6 @@
 
 " Init
 set background=dark
-if has("gui_running")
-    set cursorline
-endif
 hi clear
 if exists("syntax_on")
     syntax reset
