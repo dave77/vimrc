@@ -140,11 +140,7 @@ nnoremap <silent> @s iSigned-off-by: David Wiltshire <davew@mykolab.com><Esc>
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
 " Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite C if ! &bin | silent! %s/\s\+$//ge | endif
-autocmd BufRead,BufWrite C++ if ! &bin | silent! %s/\s\+$//ge | endif
-autocmd BufRead,BufWrite python if ! &bin | silent! %s/\s\+$//ge | endif
-autocmd BufRead,BufWrite perl if ! &bin | silent! %s/\s\+$//ge | endif
-autocmd BufRead,BufWrite haskell if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd FileType C,C++,python,perl,haskell autocmd BufWritePre <buffer> if ! &bin | silent! %s/\s\+$//ge | endif
 
 " formatting
 syntax on
@@ -153,6 +149,13 @@ set tabstop=8
 set softtabstop=8
 set autoindent
 
+au BufNewFile,BufRead *.hs set filetype=haskell
+au BufNewFile,BufRead *.cabal set filetype=haskell
+au BufNewFile,BufRead *.h *.c set filetype=C
+au BufNewFile,BufRead *.cpp *.C *.hpp set filetype=C++
+au BufNewFile,BufRead *.py set filetype=python
+au BufNewFile,BufRead *.perl *.pl set filetype=perl
+
 au FileType C setlocal shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab cindent
-au FileType Haskell setlocal shiftwidth=8 tabstop=8 softtabstop=4 expandtab
+au FileType haskell setlocal shiftwidth=8 tabstop=8 softtabstop=4 expandtab autoindent
 au FileType C++ setlocal cindent tabstop=4 expandtab shiftwidth
