@@ -47,7 +47,7 @@ let themeindex=0
 function! RotateColorTheme()
    let y = -1
    while y == -1
-      let colorstring = "black_angus#rdark#brookstream#colorful256#contrasty#icansee#jellybeans#slate2#wintersday#wombat256#wuye#xoria256#zenburn#"
+      let colorstring = "black_angus#rdark#brookstream#colorful256#contrasty#icansee#jellybeans#slate2#wintersday#wombat256#wuye#xoria256#zenburn#less#mizore"
       let x = match( colorstring, "#", g:themeindex )
       let y = match( colorstring, "#", x + 1 )
       let g:themeindex = x + 1
@@ -72,7 +72,7 @@ if has("gui_running")
 endif
 
 set background=dark
-colorscheme wuye 
+colorscheme less
 
 " Cool command completion stuff
 set wildmenu
@@ -144,6 +144,7 @@ autocmd BufRead,BufWrite C if ! &bin | silent! %s/\s\+$//ge | endif
 autocmd BufRead,BufWrite C++ if ! &bin | silent! %s/\s\+$//ge | endif
 autocmd BufRead,BufWrite python if ! &bin | silent! %s/\s\+$//ge | endif
 autocmd BufRead,BufWrite perl if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufRead,BufWrite haskell if ! &bin | silent! %s/\s\+$//ge | endif
 
 " formatting
 syntax on
@@ -153,5 +154,5 @@ set softtabstop=8
 set autoindent
 
 au FileType C setlocal shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab cindent
-au FileType Haskell setlocal shiftwidth=8 tabstop=8 softtabstop=8 expandtab
+au FileType Haskell setlocal shiftwidth=8 tabstop=8 softtabstop=4 expandtab
 au FileType C++ setlocal cindent tabstop=4 expandtab shiftwidth
