@@ -134,7 +134,7 @@ map <C-n> :cn<CR>
 map <C-m> :cp<CR>
 
 " map @s to signed off line
-nnoremap <silent> @s iSigned-off-by: David Wiltshire <dunlucky1@gmail.com><Esc>
+nnoremap <silent> @s iSigned-off-by: David Wiltshire <davew@mykolab.com><Esc>
 
 " map <F4> to switch from .c to .h
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
