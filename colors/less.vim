@@ -19,20 +19,20 @@ hi MoreMsg        term=bold cterm=bold ctermfg=darkgreen gui=bold guifg=DarkGree
 hi ModeMsg        term=bold cterm=bold gui=bold guifg=White guibg=Blue
 hi LineNr         term=underline cterm=bold ctermfg=darkcyan guifg=DarkCyan
 hi Question       term=standout cterm=bold ctermfg=darkgreen gui=bold guifg=DarkGreen
-hi Comment        term=bold cterm=bold ctermfg=0 gui=none guifg=DarkGray
+hi Comment        term=none cterm=none ctermfg=blue gui=none guifg=DarkGray
 hi Constant       term=bold cterm=none ctermfg=7 gui=none guifg=LightGray
-hi Special        term=bold cterm=none ctermfg=3 gui=none guifg=Orange
+hi Special        term=bold cterm=none ctermfg=7 gui=none guifg=Orange
 hi Identifier     term=none cterm=none ctermfg=7 gui=none guifg=LightGray
 hi PreProc        term=underline cterm=bold ctermfg=7 gui=bold guifg=White
 hi Error          term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=Black guibg=Red
 hi Todo           term=standout cterm=none ctermfg=0 ctermbg=7 guifg=Black guibg=White
-hi String         term=none cterm=none ctermfg=3 gui=none guifg=LightYellow
+hi String         term=none cterm=none ctermfg=darkyellow gui=none guifg=LightYellow
 hi Function       term=bold cterm=bold ctermfg=3 gui=none guifg=Yellow
 hi Statement      term=bold cterm=bold ctermfg=7 gui=bold guifg=White
-hi Include        term=bold cterm=bold ctermfg=4 gui=none guifg=LightBlue
-hi StorageClass   term=bold cterm=bold ctermfg=5 gui=none guifg=LightMagenta
-hi Type           term=none cterm=none ctermfg=LightGreen gui=none guifg=LightGreen
-hi Defined        term=bold cterm=bold ctermfg=6 gui=none guifg=LightCyan
+hi Include        term=bold cterm=bold ctermfg=7 gui=none guifg=LightBlue
+hi StorageClass   term=bold cterm=bold ctermfg=7 gui=none guifg=LightMagenta
+hi Type           term=bold cterm=bold ctermfg=7 gui=none guifg=LightGreen
+hi Defined        term=bold cterm=bold ctermfg=7 gui=none guifg=LightCyan
 hi link Character       String
 hi link Number          Constant
 hi link Boolean         Constant
